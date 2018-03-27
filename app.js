@@ -10,4 +10,13 @@ app.get('/fortunes',(req, res)=>{
 
 });
 
+app.get('/fortunes/random',(req, res)=>{
+ console.log('requesting random fortune');
+
+ const random_index = Math.floor(Math.random() * fortunes.length);
+
+ const r_fortune = fortunes[random_index];
+
+ res.json(r_fortune);
+});
 module.exports = app;
